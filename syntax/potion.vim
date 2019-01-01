@@ -30,6 +30,7 @@ syntax match potionNumber "\v[0-9]+e(-|\+)[0-9]+"
 syntax match potionNumber "\v[0-9]+\.[0-9]+e(-|\+)[0-9]+"
 
 syntax region potionString start=/\v"/ skip=/\v\\./ end=/\v"/
+syntax region potionString start=/\v'/ skip=/\v\\./ end=/\v'/
 
 highlight link potionKeyword Keyword
 highlight link potionFunction Function
