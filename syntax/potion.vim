@@ -23,7 +23,8 @@ syntax match potionOperator "\v/\="
 syntax match potionOperator "\v\+\="
 syntax match potionOperator "\v\-\="
 
-syntax match potionNumber "\v[0-9]+"
+syntax match potionNumber "\v0x[0-9a-fA-F]+"
+syntax match potionNumber "\v[0-9]+(\.[0-9]+)?(e(-|\+)[0-9]+)?"
 
 highlight link potionKeyword Keyword
 highlight link potionFunction Function
