@@ -16,7 +16,14 @@ function! PotionShowBytecode()
   if bytecode =~ '\v^\*\* Syntax error'
     echoerr "Syntax Error"
   else
-    split __Potion_Bytecode__
+    let potion_bytecode_buffer = bufwinnr('__Potion_Bytecode__')
+
+    if potion_bytecode_buffer >= 0
+      buffer potion_bytecode_buffer 
+    else
+      split __Potion_Bytecode__
+    endif
+
     normal! ggdG
     setlocal filetype=potionbytecode
     setlocal buftype=nofile
