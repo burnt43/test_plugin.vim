@@ -19,7 +19,7 @@ function! PotionShowBytecode()
     let potion_bytecode_buffer = bufwinnr('__Potion_Bytecode__')
 
     if potion_bytecode_buffer >= 0
-      buffer potion_bytecode_buffer 
+      execute potion_bytecode_buffer . "wincmd w"
     else
       split __Potion_Bytecode__
     endif
