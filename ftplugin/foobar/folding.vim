@@ -1,5 +1,6 @@
 setlocal foldmethod=expr
 setlocal foldexpr=FoobarFold(v:lnum)
+setlocal foldcolumn=4
 
 function! FoobarFold(lnum)
   if a:lnum ==# 1
