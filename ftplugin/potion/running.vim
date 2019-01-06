@@ -8,7 +8,7 @@ function! PotionCompileAndRunFile()
 endfunction
 
 function! PotionShowBytecode()
-  let bytecode = system(g:potion_command . "-c -V " . bufname("%"))
+  let bytecode = system(g:potion_command . " -c -V " . bufname("%"))
 
   split __Potion_Bytecode__
   normal! ggdG
