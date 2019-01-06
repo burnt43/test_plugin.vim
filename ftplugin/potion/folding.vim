@@ -8,3 +8,7 @@ function! GetPotionFold(lnum)
 
   return '0'
 endfunction
+
+function! IndentLevel(lnum)
+  return indent(a:lnum) / &shiftwidth
+endfunction
