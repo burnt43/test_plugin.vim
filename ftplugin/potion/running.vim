@@ -13,12 +13,16 @@ function! PotionShowBytecode()
 
   let bytecode = system(g:potion_command . " -c -V " . bufname("%"))
 
-  split __Potion_Bytecode__
-  normal! ggdG
-  setlocal filetype=potionbytecode
-  setlocal buftype=nofile
+  if bytecode =~ '\v^\*\* Syntax error'
+    echoerr "Syntax Error"
+  else
+    split __Potion_Bytecode__
+    normal! ggdG
+    setlocal filetype=potionbytecode
+    setlocal buftype=nofile
 
-  call append(0, split(bytecode, '\v\n'))
+    call append(0, split(bytecode, '\v\n'))
+  end
 endfunction
 
 nnoremap <buffer> <localleader>r :call PotionCompileAndRunFile()<cr>
