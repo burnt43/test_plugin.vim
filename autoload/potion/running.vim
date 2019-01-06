@@ -1,5 +1,3 @@
-echom "Autoloading..."
-
 function! potion#running#PotionCompileAndRunFile()
   write
   silent !clear
