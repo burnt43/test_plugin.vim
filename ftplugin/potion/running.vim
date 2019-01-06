@@ -3,6 +3,6 @@ if !exists("g:potion_command")
 endif
 
 nnoremap <buffer> <localleader>r
-  \ :call potion#PotionCompileAndRunFile()<cr>
+  \ :call potion#running#PotionCompileAndRunFile()<cr>
 nnoremap <buffer> <localleader>b
-  \ :call potion#PotionShowBytecode()<cr>
+  \ :call potion#running#PotionShowBytecode()<cr>

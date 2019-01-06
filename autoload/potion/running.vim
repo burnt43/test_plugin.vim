@@ -1,12 +1,12 @@
 echom "Autoloading..."
 
-function! potion#PotionCompileAndRunFile()
+function! potion#running#PotionCompileAndRunFile()
   write
   silent !clear
   execute "!" . g:potion_command . " " . bufname("%")
 endfunction
 
-function! potion#PotionShowBytecode()
+function! potion#running#PotionShowBytecode()
   write
 
   let bytecode = system(g:potion_command . " -c -V " . bufname("%"))
